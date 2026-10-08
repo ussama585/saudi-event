@@ -8,6 +8,7 @@ import AgendaSection from './components/home-page/AgendaSection'
 import SpeakersSection from './components/home-page/SpeakersSection'
 import PassesSection from './components/home-page/PassesSection'
 import VenueSection from './components/home-page/VenueSection'
+import GallerySection from './components/home-page/GallerySection'
 import FAQSection from './components/home-page/FAQSection'
 import ClosingBand from './components/home-page/ClosingBand'
 import Footer from './components/home-page/Footer'
@@ -28,6 +29,7 @@ function App() {
       <SpeakersSection setSpeaker={setSpeaker} />
       <PassesSection openRegister={openRegister} />
       <VenueSection />
+      <GallerySection />
       <FAQSection faq={faq} setFaq={setFaq} />
       <ClosingBand openRegister={openRegister} />
 
