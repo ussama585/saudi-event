@@ -1,0 +1,72 @@
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import Brand from "./Brand";
+import { navigationLinks } from "../data/navigation";
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 24);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+  useEffect(() => {
+    const close = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
+  return (
+    <header
+      className={`summit-header ${scrolled || open || location.pathname !== "/" ? "is-solid" : ""}`}
+    >
+      <div className="container header-row">
+        <Brand />
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {navigationLinks.map(([label, id]) => (
+            <Link key={id} to={`/#${id}`}>
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <Link
+          to="/#registration"
+          className="summit-button button-small header-cta"
+          onClick={() => setOpen(false)}
+        >
+          Register <ArrowUpRight size={16} />
+        </Link>
+        <button
+          className="menu-button"
+          type="button"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
+      {open && (
+        <nav
+          id="mobile-menu"
+          className="mobile-menu container"
+          aria-label="Mobile navigation"
+        >
+          {navigationLinks.map(([label, id]) => (
+            <Link key={id} to={`/#${id}`} onClick={() => setOpen(false)}>
+              {label}
+              <ArrowUpRight size={18} />
+            </Link>
+          ))}
+        </nav>
+      )}
+    </header>
+  );
+}

@@ -1,46 +1,36 @@
-import { useState } from 'react'
-import { useOutletContext } from 'react-router-dom'
+import { useRef } from "react";
+import Hero from "./components/Hero";
+import Stats from "./components/Stats";
+import About from "./components/About";
+import Pillars from "./components/Pillars";
+import Speakers from "./components/Speakers";
+import Agenda from "./components/Agenda";
+import Partners from "./components/Partners";
+import Portfolio from "./components/Portfolio";
+import FAQ from "./components/FAQ";
+import CTA from "./components/CTA";
+import Registration from "./components/Registration";
+import Footer from "./components/Footer";
+import useReveal from "./hooks/useReveal";
 
-import Hero from './components/home-page/Hero'
-import StatsBand from './components/home-page/StatsBand'
-import AboutSection from './components/home-page/AboutSection'
-import AgendaSection from './components/home-page/AgendaSection'
-import SpeakersSection from './components/home-page/SpeakersSection'
-import PassesSection from './components/home-page/PassesSection'
-import VenueSection from './components/home-page/VenueSection'
-import GallerySection from './components/home-page/GallerySection'
-import FAQSection from './components/home-page/FAQSection'
-import ClosingBand from './components/home-page/ClosingBand'
-import Footer from './components/home-page/Footer'
-import SpeakerModal from './components/home-page/SpeakerModal'
-
-function App() {
-  const [day, setDay] = useState(0);
-  const [faq, setFaq] = useState(0);
-  const { openRegister } = useOutletContext();
-  const [speaker, setSpeaker] = useState(null);
+export default function App() {
+  const pageRef = useRef(null);
+  useReveal(pageRef);
 
   return (
-    <div>
-      <Hero openRegister={openRegister} />
-      <StatsBand />
-      <AboutSection />
-      <AgendaSection day={day} setDay={setDay} />
-      <SpeakersSection setSpeaker={setSpeaker} />
-      <PassesSection openRegister={openRegister} />
-      <VenueSection />
-      <GallerySection />
-      <FAQSection faq={faq} setFaq={setFaq} />
-      <ClosingBand openRegister={openRegister} />
-
+    <main ref={pageRef}>
+      <Hero />
+      <Stats />
+      <About />
+      <Pillars />
+      <Speakers />
+      <Agenda />
+      <Partners />
+      <Portfolio />
+      <FAQ />
+      <CTA />
+      <Registration />
       <Footer />
-
-      <SpeakerModal
-        speaker={speaker}
-        setSpeaker={setSpeaker}
-      />
-    </div>
-  )
+    </main>
+  );
 }
-
-export default App
