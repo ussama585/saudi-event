@@ -47,7 +47,10 @@ export default function Countdown() {
           aria-label="Time until the summit opens"
         >
           {["Days", "Hours", "Minutes", "Seconds"].map((label, index) => (
-            <div className={`countdown-unit${label === "Seconds" ? " countdown-unit--seconds" : ""}`} key={label}>
+            <div
+              className={`countdown-unit${label === "Seconds" ? " countdown-unit--seconds" : ""}`}
+              key={label}
+            >
               <span className="countdown-number">
                 {String(time[index]).padStart(2, "0")}
               </span>
