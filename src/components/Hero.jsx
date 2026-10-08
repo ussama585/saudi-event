@@ -32,8 +32,14 @@ export default function Hero() {
 
   useEffect(() => {
     const video = videoRef.current;
+    let cancelled = false;
+    video.muted = true;
+    video.defaultMuted = true;
     if (reducedMotion || paused) video.pause();
-    else video.play().catch(() => setPaused(true));
+    else video.play().catch((error) => {
+      if (!cancelled && error.name !== "AbortError") setPaused(true);
+    });
+    return () => { cancelled = true; };
   }, [reducedMotion, paused]);
   useLayoutEffect(() => {
     const media = gsap.matchMedia();
@@ -84,7 +90,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload={reducedMotion ? "none" : "metadata"}
+        preload={reducedMotion ? "none" : "auto"}
         aria-hidden="true"
         tabIndex={-1}
       />

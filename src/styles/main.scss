@@ -609,6 +609,10 @@ h3 {
   display: inline-block;
 }
 
+.summit-hero .countdown-unit--seconds > span {
+  color: #dfc59a;
+}
+
 .stats-section {
   background: $paper;
   padding-block: 56px;
