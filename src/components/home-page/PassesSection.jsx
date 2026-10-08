@@ -15,12 +15,6 @@ export default function PassesSection({ openRegister }) {
               <span>Your place at the summit.</span>
             </h2>
           </div>
-
-          <p className="heading-copy">
-            Choose the experience that matches your goals.
-            <br />
-            Make three days count.
-          </p>
         </div>
 
         <div className="pass-grid">

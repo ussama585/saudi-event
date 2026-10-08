@@ -15,12 +15,6 @@ export default function AgendaSection({ day, setDay }) {
               <span>A world of opportunity.</span>
             </h2>
           </div>
-
-          <p className="heading-copy">
-            From big-picture thinking to real-world action.
-            <br />
-            A programme built to move business forward.
-          </p>
         </div>
 
         <div className="agenda-tabs" role="tablist" aria-label="Summit days">

@@ -8,7 +8,7 @@
   --card-foreground: #111827;
   --primary: #3b82f6;
   --primary-foreground: #ffffff;
-  --muted-foreground: #6b7280;
+  --muted-foreground: #606a78;
   --border: #e5e7eb;
   --hero-foreground: #ffffff;
   --hero-muted: #d1d5db;
@@ -21,8 +21,9 @@
   --peach-ink: #9a563b;
   --sky: #e8f1fb;
   --sky-ink: #356ea7;
-  --font-sans: "DM Sans", sans-serif;
-  --font-display: "Manrope", sans-serif;
+  --font-sans: "Manrope", sans-serif;
+  --font-display: var(--font-sans);
+  --section-bg: #f3f9ff;
 }
 
 * {
@@ -415,7 +416,7 @@ a {
   align-items: flex-end;
   gap: 17px;
   text-align: right;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   line-height: 1.8;
 }
@@ -502,7 +503,8 @@ a {
 }
 
 .stat>span:last-child {
-  font-size: 11px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--muted-foreground);
 }
 
@@ -519,7 +521,7 @@ a {
 }
 
 .eyebrow {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
   color: var(--primary);
   letter-spacing: 1.6px;
@@ -591,7 +593,7 @@ h2>span {
 
 .pillar-top>span {
   color: var(--muted-foreground);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .pillar h3 {
@@ -601,7 +603,7 @@ h2>span {
 }
 
 .pillar p {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted-foreground);
   line-height: 1.8;
 }
@@ -609,7 +611,7 @@ h2>span {
 .agenda-section,
 .passes-section,
 .faq-section {
-  background: var(--section-tint);
+  background: var(--section-bg);
 }
 
 .agenda-tabs {
@@ -628,7 +630,8 @@ h2>span {
   padding: 12px 18px;
   white-space: normal;
   text-align: left;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 700;
   box-shadow: none;
 }
 
@@ -648,14 +651,14 @@ h2>span {
 .day-date {
   display: flex;
   flex-direction: column;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   flex-shrink: 0;
   gap: 7px;
 }
 
 .day-date span {
-  font-size: 8px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--muted-foreground);
 }
@@ -673,7 +676,8 @@ h2>span {
 }
 
 .programme-heading>span {
-  font-size: 8px;
+  font-size: 17px;
+  font-weight: 600;
   letter-spacing: 1px;
   color: var(--muted-foreground);
 }
@@ -701,7 +705,8 @@ h2>span {
 
 .session-type {
   color: var(--primary);
-  font-size: 9px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .session h4 {
@@ -711,7 +716,7 @@ h2>span {
 }
 
 .session-stage {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--muted-foreground);
 }
 
@@ -722,7 +727,7 @@ h2>span {
 }
 
 .programme-note {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--muted-foreground);
   margin-top: 20px;
 }
@@ -770,7 +775,7 @@ h2>span {
   position: absolute;
   bottom: 15px;
   left: 20px;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1.6px;
 }
 
@@ -779,17 +784,17 @@ h2>span {
 }
 
 .speaker-info .eyebrow {
-  font-size: 8px;
+  font-size: 13px;
   margin-bottom: 10px;
 }
 
 .speaker-info h3 {
   font-size: 18px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .speaker-info>p:not(.eyebrow) {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--muted-foreground);
   margin-top: 9px;
 }
@@ -798,7 +803,7 @@ h2>span {
   padding: 0;
   margin-top: 16px;
   height: 23px;
-  font-size: 10px;
+  font-size: 14px;
   justify-content: space-between;
   width: 100%;
 }
@@ -829,7 +834,7 @@ h2>span {
 }
 
 .pass-top span {
-  font-size: 7px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: var(--muted-foreground);
 }
@@ -844,7 +849,7 @@ h2>span {
 }
 
 .pass-card>p {
-  font-size: 11px;
+  font-size: 14px;
   margin-top: 9px;
   color: var(--muted-foreground);
 }
@@ -862,7 +867,7 @@ h2>span {
   display: block;
   font-family: var(--font-sans);
   color: var(--muted-foreground);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
   margin-top: 6px;
 }
@@ -877,7 +882,7 @@ h2>span {
   display: flex;
   gap: 9px;
   align-items: center;
-  font-size: 11px;
+  font-size: 14px;
   margin-bottom: 15px;
 }
 
@@ -893,7 +898,7 @@ h2>span {
   justify-content: space-between;
   border-radius: 3px;
   height: 43px;
-  font-size: 11px;
+  font-size: 14px;
   box-shadow: none;
 }
 
@@ -923,7 +928,7 @@ h2>span {
   left: 22px;
   background: var(--background);
   padding: 11px 15px;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
@@ -942,7 +947,7 @@ h2>span {
 }
 
 .venue-content>p:not(.eyebrow):not(.image-note) {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted-foreground);
   line-height: 1.85;
   margin-top: 20px;
@@ -962,12 +967,12 @@ h2>span {
 }
 
 .venue-detail h3 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .venue-detail p {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--muted-foreground);
   line-height: 1.8;
   margin-top: 6px;
@@ -975,12 +980,12 @@ h2>span {
 
 .venue-content>a {
   margin-top: 25px;
-  font-size: 11px;
+  font-size: 14px;
   box-shadow: none;
 }
 
 .image-note {
-  font-size: 9px;
+  font-size: 14px;
   margin-top: 12px;
   color: var(--muted-foreground);
 }
@@ -996,7 +1001,7 @@ h2>span {
 }
 
 .faq-copy {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
   color: var(--muted-foreground);
   margin-top: 22px;
@@ -1016,7 +1021,8 @@ h2>span {
   padding: 21px 0;
   justify-content: space-between;
   text-align: left;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 600;
   white-space: normal;
   gap: 20px;
 }
@@ -1027,7 +1033,7 @@ h2>span {
 }
 
 .faq-item p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.85;
   color: var(--muted-foreground);
   padding: 0 28px 22px 0;
@@ -1077,13 +1083,13 @@ footer {
 }
 
 .footer-label {
-  font-size: 8px;
-  font-weight: 650;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: 1.5px;
 }
 
 .footer-top>div>p {
-  font-size: 11px;
+  font-size: 14px;
   margin-top: 12px;
   color: var(--muted-foreground);
 }
@@ -1092,7 +1098,7 @@ footer {
   display: flex;
   gap: 18px;
   align-items: center;
-  font-size: 10px;
+  font-size: 14px;
   margin-top: 8px;
   color: var(--primary);
 }
@@ -1108,7 +1114,7 @@ footer {
   justify-content: space-between;
   gap: 24px;
   padding-block: 22px;
-  font-size: 8px;
+  font-size: 12px;
   color: var(--muted-foreground);
 }
 
@@ -1156,14 +1162,14 @@ footer {
   padding: 10px;
   background: var(--section-tint);
   color: var(--muted-foreground);
-  font-size: 11px;
+  font-size: 12px;
   border-radius: 3px;
 }
 
 .registration-modal .consent {
   flex-direction: row;
   align-items: flex-start;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -1234,7 +1240,7 @@ footer {
   .day-tab {
     gap: 10px;
     padding-inline: 12px;
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .venue-grid {
@@ -1250,7 +1256,7 @@ footer {
   }
 
   .pass-card li {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -1276,7 +1282,7 @@ footer {
   }
 
   .brand {
-    font-size: 10px;
+    font-size: 12px;
     gap: 9px;
   }
 
@@ -1301,7 +1307,7 @@ footer {
   .nav-register {
     margin-left: auto;
     padding-inline: 12px;
-    font-size: 10px;
+    font-size: 12px;
     height: 36px;
   }
 
@@ -1342,7 +1348,7 @@ footer {
   }
 
   .event-label {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 1.25px;
     margin-bottom: 27px;
   }
@@ -1377,13 +1383,13 @@ footer {
   }
 
   .hero-caption {
-    font-size: 9px;
+    font-size: 12px;
     max-width: 290px;
   }
 
   .hero-bottom {
     bottom: 22px;
-    font-size: 7px;
+    font-size: 12px;
   }
 
   .hero-coordinate {
@@ -1391,7 +1397,7 @@ footer {
   }
 
   .hero-bottom a {
-    font-size: 9px;
+    font-size: 12px;
     gap: 6px;
   }
 
@@ -1415,7 +1421,7 @@ footer {
   }
 
   .stat>span:last-child {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .section {
@@ -1434,7 +1440,7 @@ footer {
   }
 
   .eyebrow {
-    font-size: 8px;
+    font-size: 13px;
     margin-bottom: 15px;
   }
 
@@ -1489,7 +1495,7 @@ footer {
     align-items: flex-start;
     gap: 10px;
     padding: 15px 9px;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.45;
   }
 
@@ -1499,11 +1505,11 @@ footer {
 
   .day-date {
     gap: 3px;
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .day-date span {
-    font-size: 7px;
+    font-size: 12px;
   }
 
   .programme-heading {
@@ -1517,7 +1523,7 @@ footer {
   }
 
   .programme-heading>span {
-    font-size: 7px;
+    font-size: 12px;
     max-width: 80px;
     text-align: right;
   }
@@ -1529,7 +1535,7 @@ footer {
 
   .session-time {
     gap: 5px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .session-time svg {
@@ -1547,7 +1553,7 @@ footer {
   }
 
   .programme-note {
-    font-size: 9px;
+    font-size: 14px;
     line-height: 1.7;
   }
 
@@ -1570,7 +1576,7 @@ footer {
   }
 
   .speaker-info button {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .pass-card {
@@ -1586,7 +1592,7 @@ footer {
   }
 
   .pass-top span {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .venue-grid {
@@ -1643,7 +1649,7 @@ footer {
   }
 
   .footer-top>p {
-    font-size: 10px;
+    font-size: 12px;
     margin-left: auto;
   }
 
@@ -1654,7 +1660,7 @@ footer {
   .footer-bottom {
     flex-wrap: wrap;
     row-gap: 15px;
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .footer-bottom span:nth-child(2) {
@@ -1672,16 +1678,16 @@ footer {
   }
 
   .nav-register {
-    font-size: 9px;
+    font-size: 12px;
     padding-inline: 9px;
   }
 
   .brand {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .brand>span:last-child>span {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .header-inner {
@@ -1689,7 +1695,7 @@ footer {
   }
 
   .event-label {
-    font-size: 7px;
+    font-size: 12px;
   }
 }
 

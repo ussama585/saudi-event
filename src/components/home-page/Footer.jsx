@@ -8,12 +8,6 @@ export default function Footer() {
         <div className="footer-top">
           <Brand />
 
-          <p>
-            A Platform for a Stronger
-            <br />
-            Business Tomorrow.
-          </p>
-
           <div>
             <span className="footer-label">LET’S CONNECT</span>
             <p>Official contact details coming soon</p>

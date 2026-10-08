@@ -14,19 +14,6 @@ export default function AboutSection() {
               <span>A shared tomorrow.</span>
             </h2>
           </div>
-
-          <div className="about-intro">
-            <p>
-              A meeting point for the leaders, thinkers and changemakers shaping
-              the next chapter of business.
-            </p>
-
-            <p>
-              Riyadh Business Summit brings together regional ambition and
-              global perspective to explore new opportunities, spark innovation
-              and build partnerships that last.
-            </p>
-          </div>
         </div>
 
         <div className="about-pillars">

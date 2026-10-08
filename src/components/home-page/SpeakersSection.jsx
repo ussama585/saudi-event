@@ -15,11 +15,6 @@ export default function SpeakersSection({ setSpeaker }) {
               <span>inspire progress.</span>
             </h2>
           </div>
-
-          <div className="heading-copy">
-            <p>50+ voices. Countless new perspectives.</p>
-            <p>Our keynote lineup is coming soon.</p>
-          </div>
         </div>
 
         <div className="speaker-grid">
