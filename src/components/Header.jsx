@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Brand from "./Brand";
@@ -9,6 +9,24 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const headerRef = useRef(null);
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+    const row = header.querySelector(".header-row");
+    const updateHeight = () => {
+      const border = parseFloat(getComputedStyle(header).borderBottomWidth) || 0;
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${row.getBoundingClientRect().height + border}px`,
+      );
+    };
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(row);
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty("--header-height");
+    };
+  }, []);
   useEffect(() => {
     if (!open) return;
     const previousOverflow = document.body.style.overflow;

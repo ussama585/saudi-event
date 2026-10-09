@@ -6,6 +6,7 @@ $paper: #f6f5ef;
 $muted: #65716c;
 
 :root {
+  --header-height: 89px;
   font-family: "Manrope", sans-serif;
   color-scheme: light;
   --bs-body-font-family: "Manrope", sans-serif;
@@ -16,7 +17,7 @@ $muted: #65716c;
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -515,6 +516,9 @@ h3 {
   }
 }
 @media (max-width: 575.98px) {
+  :root {
+    --header-height: 77px;
+  }
   .summit-hero {
     min-height: 100svh;
   }
