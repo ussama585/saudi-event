@@ -12,54 +12,68 @@ import {
   Pause,
   Play,
 } from "lucide-react";
-import speaker1 from "../assets/media/speakers/1.jpeg";
-import speaker2 from "../assets/media/speakers/2.jpeg";
-import speaker3 from "../assets/media/speakers/3.jpeg";
-import speaker4 from "../assets/media/speakers/4.jpeg";
-import speaker5 from "../assets/media/speakers/5.jpeg";
-import speaker6 from "../assets/media/speakers/6.jpeg";
-import speaker7 from "../assets/media/speakers/7.jpeg";
+import speaker1 from "../assets/media/speakers/1-green.png";
+import speaker2 from "../assets/media/speakers/2-green.png";
+import speaker3 from "../assets/media/speakers/3-green.png";
+import speaker4 from "../assets/media/speakers/4-green.png";
+import speaker5 from "../assets/media/speakers/5-green.png";
+import speaker6 from "../assets/media/speakers/6-green.png";
+import speaker7 from "../assets/media/speakers/7-green.png";
 
 const speakers = [
   {
     track: "GLOBAL BUSINESS",
-    role: "The leaders opening new horizons",
+    name: "Faisal Al Nasser",
+    designation: "Chief Executive Officer",
+    company: "Horizon Gate Group",
     icon: Globe2,
     image: speaker1,
   },
   {
     track: "INNOVATION",
-    role: "The thinkers shaping what comes next",
+    name: "Noura Al Harbi",
+    designation: "Chief Innovation Officer",
+    company: "Next Chapter Labs",
     icon: Lightbulb,
     image: speaker2,
   },
   {
     track: "INVESTMENT",
-    role: "The voices building lasting value",
+    name: "Omar Al Rashid",
+    designation: "Managing Partner",
+    company: "Crescent Bridge Capital",
     icon: Landmark,
     image: speaker3,
   },
   {
     track: "PARTNERSHIPS",
-    role: "The connectors bringing ambition together",
+    name: "Khalid Al Mansour",
+    designation: "Director of Strategic Partnerships",
+    company: "Summit Link Ventures",
     icon: Handshake,
     image: speaker4,
   },
   {
     track: "LEADERSHIP",
-    role: "The perspectives inspiring a shared future",
+    name: "Reem Al Qasimi",
+    designation: "Chief Strategy Officer",
+    company: "Future Path Advisory",
     icon: Globe2,
     image: speaker5,
   },
   {
     track: "ENTREPRENEURSHIP",
-    role: "The founders turning ambition into action",
+    name: "Sara Al Zahrani",
+    designation: "Founder & CEO",
+    company: "Ambition Works",
     icon: Lightbulb,
     image: speaker6,
   },
   {
     track: "TRANSFORMATION",
-    role: "The ideas moving business forward",
+    name: "Abdullah Al Faris",
+    designation: "Digital Transformation Director",
+    company: "Vision Spark Technologies",
     icon: Landmark,
     image: speaker7,
   },
@@ -124,8 +138,8 @@ export default function Speakers() {
           </div>
         </div>
         <p className="speaker-announcement" data-reveal>
-          Our speaker line-up is taking shape. Confirmed names and biographies
-          will be announced here.
+          Sample speaker profiles are shown below. Names, designations and
+          companies are fictional; the confirmed line-up will be announced soon.
         </p>
         <div data-reveal>
           <Swiper
@@ -150,35 +164,39 @@ export default function Speakers() {
               992: { slidesPerView: 3 },
             }}
           >
-            {speakers.map(({ track, role, icon: Icon, image }, index) => (
-              <SwiperSlide key={track}>
-                <article className={`speaker-card speaker-tone-${index}`}>
-                  <div className="speaker-portrait">
-                    <Icon
-                      className="speaker-track-icon"
-                      size={110}
-                      strokeWidth={0.65}
-                    />
-                    <UserRound size={130} strokeWidth={0.8} />
-                    <img
-                      src={image}
-                      alt={`Speaker portrait ${index + 1}`}
-                      loading="lazy"
-                      decoding="async"
-                      width={300}
-                      height={300}
-                      onError={(event) => {
-                        event.currentTarget.style.display = "none";
-                      }}
-                    />
-                  </div>
-                  <div className="speaker-copy">
-                    <p className="eyebrow">{track}</p>
-                    <h3>{role}</h3>
-                  </div>
-                </article>
-              </SwiperSlide>
-            ))}
+            {speakers.map(
+              ({ track, name, designation, company, icon: Icon, image }) => (
+                <SwiperSlide key={track}>
+                  <article className="speaker-card">
+                    <div className="speaker-portrait">
+                      <Icon
+                        className="speaker-track-icon"
+                        size={110}
+                        strokeWidth={0.65}
+                      />
+                      <UserRound size={130} strokeWidth={0.8} />
+                      <img
+                        src={image}
+                        alt={`Sample portrait for ${name}`}
+                        loading="lazy"
+                        decoding="async"
+                        width={1536}
+                        height={1024}
+                        onError={(event) => {
+                          event.currentTarget.style.display = "none";
+                        }}
+                      />
+                    </div>
+                    <div className="speaker-copy">
+                      <p className="eyebrow">{track}</p>
+                      <h3>{name}</h3>
+                      <p className="speaker-designation">{designation}</p>
+                      <p className="speaker-company">{company}</p>
+                    </div>
+                  </article>
+                </SwiperSlide>
+              ),
+            )}
           </Swiper>
         </div>
       </div>

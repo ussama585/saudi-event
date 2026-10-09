@@ -960,8 +960,8 @@ h3 {
   justify-content: center;
   padding-bottom: 36px;
   overflow: hidden;
-  background: #dbe2d8;
-  color: #547264;
+  background: $ink;
+  color: $accent;
 
   > svg {
     transition: transform 0.3s;
@@ -986,21 +986,6 @@ h3 {
   }
 }
 
-.speaker-tone-1 .speaker-portrait {
-  background: #e9dfcf;
-  color: #8e7753;
-}
-
-.speaker-tone-2 .speaker-portrait {
-  background: #dce5e6;
-  color: #5b7880;
-}
-
-.speaker-tone-3 .speaker-portrait {
-  background: #dddde7;
-  color: #757191;
-}
-
 .speaker-copy {
   padding: 26px;
 
@@ -1011,7 +996,22 @@ h3 {
 
   h3 {
     font-size: 23px;
-    min-height: 78px;
+    min-height: 52px;
+    overflow-wrap: anywhere;
+  }
+
+  .speaker-designation {
+    margin-top: 8px;
+    font-size: 14px;
+    color: $muted;
+    min-height: 48px;
+  }
+
+  .speaker-company {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $ink;
   }
 
   > span {
