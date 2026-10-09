@@ -21,23 +21,35 @@ export default function useReveal(ref, dependency = null) {
             child.hasAttribute("data-reveal"),
           );
           const distance = mobile ? 24 : 40;
+          const horizontalOffset = () => {
+            const bounds = element.getBoundingClientRect();
+            const currentX = Number(gsap.getProperty(element, "x")) || 0;
+            const available =
+              direction === "left"
+                ? bounds.left - currentX
+                : document.documentElement.clientWidth -
+                  (bounds.right - currentX);
+            const offset = Math.min(distance, Math.max(0, available));
+            return direction === "left" ? -offset : offset;
+          };
           gsap.from(element, {
             opacity: 0,
             x:
-              direction === "left"
-                ? -distance
-                : direction === "right"
-                  ? distance
-                  : 0,
+              direction === "left" || direction === "right"
+                ? horizontalOffset
+                : 0,
             y: direction === "left" || direction === "right" ? 0 : distance,
             duration: 0.9,
             delay: Math.min(siblings.indexOf(element) * 0.1, 0.25),
             ease: "power3.out",
             scrollTrigger: {
               trigger: element,
-              start: "top 90%",
+              start: element.closest(".summit-footer")
+                ? "top bottom"
+                : "top 90%",
               end: "bottom top",
               toggleActions: "play none none reverse",
+              invalidateOnRefresh: true,
             },
           });
         });

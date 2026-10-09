@@ -14,6 +14,7 @@ function remaining() {
 
 export default function Countdown() {
   const [time, setTime] = useState(remaining);
+  const seconds = time[3];
   const ref = useRef(null);
   useEffect(() => {
     const timer = setInterval(() => setTime(remaining()), 1000);
@@ -23,13 +24,13 @@ export default function Countdown() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const context = gsap.context(() => {
       gsap.fromTo(
-        ".countdown-number",
+        ".countdown-unit--seconds .countdown-number",
         { y: 5, opacity: 0.7 },
         { y: 0, opacity: 1, duration: 0.3 },
       );
     }, ref);
     return () => context.revert();
-  }, [time]);
+  }, [seconds]);
   return (
     <section id="countdown" className="countdown-section" ref={ref}>
       <div className="container countdown-row" data-reveal>

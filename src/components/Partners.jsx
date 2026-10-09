@@ -11,32 +11,14 @@ const logoFiles = import.meta.glob(
     import: "default",
   },
 );
-const partnerNames = {
-  stc: "STC",
-  rotana: "Rotana",
-  redsea: "Red Sea",
-  pcg: "PCG",
-  nitx: "NITX",
-  mbc: "MBC",
-  manga: "Manga",
-  jaco: "Jaco",
-  ideation: "Ideation",
-  humain: "HUMAIN",
-  expo: "Expo",
-  elixr: "Elixr",
-  cargo: "Cargo",
-  arabsat: "Arabsat",
-  alula: "AlUla",
-  "al-arabia": "Al Arabia",
-};
 const partners = Object.entries(logoFiles)
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([path, logo]) => {
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([path, logo], index) => {
     const name = path
       .split("/")
       .pop()
       .replace(/\.[^.]+$/, "");
-    return { logo, name: partnerNames[name] || "Partner logo", id: name };
+    return { logo, name: `Partner logo ${index + 1}`, id: name };
   });
 
 export default function Partners() {

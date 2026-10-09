@@ -141,7 +141,9 @@ export default function Hero() {
               <br />
               tomorrow.
             </strong>
-            <span>25.2517° N / 46.3864° E</span>
+            <a href="#location" aria-label="View the summit location on the map">
+              25.2517° N / 46.3864° E
+            </a>
           </div>
         </div>
       </div>

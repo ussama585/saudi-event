@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, CheckCircle2, ArrowUpRight } from "lucide-react";
+import FormSelect from "./FormSelect";
 
 export default function Registration() {
   const [prepared, setPrepared] = useState(false);
@@ -75,22 +76,22 @@ export default function Registration() {
                 </div>
               ))}
               <div className="col-12">
-                <label className="form-label" htmlFor="interest">
+                <label
+                  className="form-label"
+                  id="interest-label"
+                  htmlFor="interest"
+                >
                   I'm interested in
                 </label>
-                <select
-                  className="form-select"
+                <FormSelect
                   id="interest"
                   name="interest"
                   value={values.interest}
-                  onChange={update}
-                >
-                  {["Delegate", "Partnership", "Corporate delegation"].map(
-                    (value) => (
-                      <option key={value}>{value}</option>
-                    ),
-                  )}
-                </select>
+                  options={["Delegate", "Partnership", "Corporate delegation"]}
+                  onChange={(interest) =>
+                    setValues((current) => ({ ...current, interest }))
+                  }
+                />
               </div>
             </div>
             <p className="small-note">

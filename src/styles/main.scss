@@ -457,7 +457,8 @@ h3 {
   flex-direction: column;
   gap: 16px;
 
-  span {
+  span,
+  a {
     font-size: 12px;
     letter-spacing: 0.12em;
   }
@@ -673,6 +674,92 @@ h3 {
 }
 
 // About and pillars.
+.summit-select {
+  position: relative;
+}
+.summit-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cdd8ce;
+  border-radius: 6px;
+  background: white;
+  color: $ink;
+  text-align: left;
+  font-size: 16px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+  &:hover {
+    border-color: $ink;
+    background: $paper;
+  }
+  &:focus-visible,
+  &[aria-expanded="true"] {
+    outline: 0;
+    border-color: $ink;
+    box-shadow: 0 0 0 0.2rem rgba($ink, 0.1);
+  }
+  &[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+}
+.summit-select-options {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid #cdd8ce;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 12px 32px rgba($ink, 0.12);
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 4px;
+    color: $ink;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover,
+    &.is-active,
+    &[aria-selected="true"] {
+      background: $ink;
+      color: white;
+    }
+  }
+}
+
+.about-section,
+.location-section,
+.faq-section {
+  // Contain sideways reveal movement without expanding the page width.
+  overflow-x: clip;
+}
+
+.about-section,
+.faq-section {
+  .row > * {
+    min-width: 0;
+  }
+
+  h2,
+  p,
+  .text-link {
+    overflow-wrap: anywhere;
+  }
+}
+
 .about-image {
   position: relative;
   overflow: hidden;
@@ -683,6 +770,15 @@ h3 {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-image {
+    img {
+      height: 680px;
+      aspect-ratio: auto;
+    }
   }
 }
 
@@ -1071,10 +1167,8 @@ h3 {
   gap: 12px;
   min-height: 180px;
   padding: 24px;
-  border: 1px solid $ink;
-  border-radius: 15px;
-  background: $ink;
-  color: white;
+  background: transparent;
+  color: $ink;
 
   strong {
     font-size: 17px;
@@ -1338,6 +1432,11 @@ h3 {
     font-weight: 600;
     line-height: 1.5;
 
+    span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
     svg {
       flex-shrink: 0;
     }
@@ -1407,6 +1506,7 @@ h3 {
 }
 
 .summit-footer {
+  overflow: clip;
   background: $dark;
   color: white;
   padding-top: 70px;
