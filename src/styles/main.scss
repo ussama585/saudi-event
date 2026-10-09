@@ -293,6 +293,31 @@ h3 {
   }
 }
 
+@media (max-width: 1199.98px) {
+  .summit-header.is-menu-open {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: $dark;
+    .header-row {
+      flex-shrink: 0;
+    }
+    .mobile-menu {
+      flex: 1;
+      min-height: 0;
+      max-height: none;
+      width: 100%;
+      padding: 24px clamp(20px, 6vw, 80px)
+        max(24px, env(safe-area-inset-bottom));
+      overscroll-behavior: contain;
+      a {
+        padding-block: 18px;
+        font-size: clamp(20px, 4vw, 32px);
+      }
+    }
+  }
+}
+
 // Hero.
 .summit-hero {
   position: relative;

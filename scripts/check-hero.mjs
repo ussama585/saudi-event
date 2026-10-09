@@ -7,19 +7,49 @@ try {
       viewport: { width, height: 900 },
       reducedMotion: "no-preference",
     });
-    await page.goto(url, { waitUntil: "domcontentloaded" });
-    await page.waitForFunction(
-      () => {
-        const video = document.querySelector("video.hero-background");
-        return (
-          video &&
-          !video.paused &&
-          video.currentTime > 0.5 &&
-          video.videoWidth > 0
-        );
-      },
-      { timeout: 30000 },
+    page.on("pageerror", (error) =>
+      console.log("Browser error:", error.message),
     );
+    page.on("requestfailed", (request) =>
+      console.log(
+        "Failed request:",
+        request.url(),
+        request.failure()?.errorText,
+      ),
+    );
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page
+      .waitForFunction(
+        () => {
+          const video = document.querySelector("video.hero-background");
+          return (
+            video &&
+            !video.paused &&
+            video.currentTime > 0.5 &&
+            video.videoWidth > 0
+          );
+        },
+        null,
+        { timeout: 45000 },
+      )
+      .catch(async (error) => {
+        console.log(
+          await page.evaluate(() => {
+            const video = document.querySelector("video.hero-background");
+            return {
+              text: document.body.innerText.slice(0, 200),
+              video: video && {
+                src: video.currentSrc,
+                paused: video.paused,
+                time: video.currentTime,
+                readyState: video.readyState,
+                error: video.error?.message,
+              },
+            };
+          }),
+        );
+        throw error;
+      });
     const result = await page.evaluate(() => ({
       video: {
         src: document.querySelector("video.hero-background").currentSrc,

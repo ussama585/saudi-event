@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Brand from "./Brand";
@@ -8,6 +8,43 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const headerRef = useRef(null);
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    const previousFocus = document.activeElement;
+    document.body.style.overflow = "hidden";
+    headerRef.current
+      .querySelector("#mobile-menu a")
+      ?.focus({ preventScroll: true });
+    const desktop = window.matchMedia("(min-width: 1200px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    const trapFocus = (event) => {
+      if (event.key !== "Tab") return;
+      const controls = [
+        ...headerRef.current.querySelectorAll("a, button"),
+      ].filter((element) => element.getClientRects().length);
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    document.addEventListener("keydown", trapFocus);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      desktop.removeEventListener("change", closeOnDesktop);
+      document.removeEventListener("keydown", trapFocus);
+      previousFocus?.focus({ preventScroll: true });
+    };
+  }, [open]);
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 24);
     update();
@@ -24,7 +61,8 @@ export default function Header() {
 
   return (
     <header
-      className={`summit-header ${scrolled || open || location.pathname !== "/" ? "is-solid" : ""}`}
+      ref={headerRef}
+      className={`summit-header ${scrolled || open || location.pathname !== "/" ? "is-solid" : ""}${open ? " is-menu-open" : ""}`}
     >
       <div className="container header-row">
         <Brand />
@@ -56,7 +94,7 @@ export default function Header() {
       {open && (
         <nav
           id="mobile-menu"
-          className="mobile-menu container"
+          className="mobile-menu"
           aria-label="Mobile navigation"
         >
           {navigationLinks.map(([label, id]) => (
