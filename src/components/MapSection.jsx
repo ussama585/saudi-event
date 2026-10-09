@@ -1,7 +1,7 @@
 import { ArrowUpRight, MapPin, Navigation } from "lucide-react";
 import ScrollMap from "./ScrollMap.jsx";
 
-const mapLink = "https://share.google/mTRWUIsOwHs5NYIn8";
+const mapLink = "https://maps.app.goo.gl/f8nPgfCptKF9hyB3A";
 
 export default function MapSection() {
   return (

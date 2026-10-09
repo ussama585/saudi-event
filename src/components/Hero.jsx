@@ -11,7 +11,7 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import skyline from "../assets/media/riyadh-skyline.jpeg";
-import bannerVideo from "../assets/media/banner-video-web-1.mp4";
+import bannerVideo from "../assets/media/banner-video-optimized.mp4";
 import Countdown from "./Countdown";
 
 gsap.registerPlugin(ScrollTrigger);
