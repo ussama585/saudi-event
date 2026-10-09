@@ -6,5 +6,6 @@ export const navigationLinks = [
   ["Partners", "partners"],
   ["Portfolio", "portfolio"],
   ["FAQ", "faq"],
+  ["Location", "location"],
   ["Registration", "registration"],
 ];

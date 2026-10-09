@@ -12,13 +12,13 @@ import {
   Pause,
   Play,
 } from "lucide-react";
-import speaker1 from "../assets/media/speakers/1.jpg";
-import speaker2 from "../assets/media/speakers/2.jpg";
-import speaker3 from "../assets/media/speakers/3.jpg";
-import speaker4 from "../assets/media/speakers/4.jpg";
-import speaker5 from "../assets/media/speakers/5.jpg";
-import speaker6 from "../assets/media/speakers/6.jpg";
-import speaker7 from "../assets/media/speakers/7.jpg";
+import speaker1 from "../assets/media/speakers/1.jpeg";
+import speaker2 from "../assets/media/speakers/2.jpeg";
+import speaker3 from "../assets/media/speakers/3.jpeg";
+import speaker4 from "../assets/media/speakers/4.jpeg";
+import speaker5 from "../assets/media/speakers/5.jpeg";
+import speaker6 from "../assets/media/speakers/6.jpeg";
+import speaker7 from "../assets/media/speakers/7.jpeg";
 
 const speakers = [
   {
@@ -87,7 +87,7 @@ export default function Speakers() {
       <div className="container">
         <div className="section-heading" data-reveal>
           <div>
-            <p className="eyebrow">03 / THE VOICES</p>
+            <p className="eyebrow">03 / THE SPEAKERS</p>
             <h2>
               Fresh perspectives.
               <br />

@@ -141,7 +141,7 @@ export default function Hero() {
               <br />
               tomorrow.
             </strong>
-            <span>24.7136° N / 46.6753° E</span>
+            <span>25.2517° N / 46.3864° E</span>
           </div>
         </div>
       </div>

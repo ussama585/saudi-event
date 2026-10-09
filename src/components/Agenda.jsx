@@ -28,7 +28,7 @@ export default function Agenda() {
       <div className="container">
         <div className="section-heading" data-reveal>
           <div>
-            <p className="eyebrow">04 / THE PROGRAMME</p>
+            <p className="eyebrow">04 / THE AGENDA</p>
             <h2>
               Three days.
               <br />
@@ -36,7 +36,7 @@ export default function Agenda() {
             </h2>
           </div>
           <p>
-            A proposed programme of ideas,
+            A proposed agenda of ideas,
             <br />
             insights and new connections.
           </p>

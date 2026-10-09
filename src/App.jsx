@@ -8,7 +8,7 @@ import Agenda from "./components/Agenda";
 import Partners from "./components/Partners";
 import Portfolio from "./components/Portfolio";
 import FAQ from "./components/FAQ";
-import CTA from "./components/CTA";
+import MapSection from "./components/MapSection";
 import Registration from "./components/Registration";
 import Footer from "./components/Footer";
 import useReveal from "./hooks/useReveal";
@@ -28,7 +28,7 @@ export default function App() {
       <Partners />
       <Portfolio />
       <FAQ />
-      <CTA />
+      <MapSection />
       <Registration />
       <Footer />
     </main>

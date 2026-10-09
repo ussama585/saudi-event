@@ -57,7 +57,7 @@ export default function Portfolio() {
       <div className="container-fluid portfolio-container">
         <div className="section-heading portfolio-heading" data-reveal>
           <div>
-            <p className="eyebrow">OUR PORTFOLIO</p>
+            <p className="eyebrow">HIGHLIGHTS FROM LAST YEAR</p>
             <h2 id="portfolio-title">
               Experiences worth <span>remembering.</span>
             </h2>

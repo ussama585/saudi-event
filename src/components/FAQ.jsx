@@ -67,11 +67,14 @@ export default function FAQ() {
                 </h3>
                 <div
                   id={`faq-answer-${index}`}
+                  className="faq-answer"
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
-                  hidden={active !== index}
+                  aria-hidden={active !== index}
                 >
-                  <p>{answer}</p>
+                  <div className="faq-answer-inner">
+                    <p>{answer}</p>
+                  </div>
                 </div>
               </div>
             ))}

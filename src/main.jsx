@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "swiper/css/pagination";
+import "leaflet/dist/leaflet.css";
 import "./styles/main.scss";
 import App from "./App.jsx";
 import AppLayout from "./components/AppLayout.jsx";
