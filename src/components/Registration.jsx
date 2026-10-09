@@ -52,10 +52,15 @@ export default function Registration() {
           >
             <div className="row g-4">
               {[
-                ["name", "Full name", "text"],
-                ["email", "Email address", "email"],
-                ["company", "Organisation", "text"],
-              ].map(([name, label, type]) => (
+                ["name", "Full name", "text", "Enter your full name"],
+                ["email", "Email address", "email", "you@company.com"],
+                [
+                  "company",
+                  "Organisation",
+                  "text",
+                  "Enter your organisation name",
+                ],
+              ].map(([name, label, type, placeholder]) => (
                 <div
                   className={name === "company" ? "col-12" : "col-md-6"}
                   key={name}
@@ -68,6 +73,7 @@ export default function Registration() {
                     id={name}
                     name={name}
                     type={type}
+                    placeholder={placeholder}
                     value={values[name]}
                     onChange={update}
                     required
