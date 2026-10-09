@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Handshake, Pause, Play, ArrowLeft, ArrowRight } from "lucide-react";
 
 const logoFiles = import.meta.glob(
-  "../assets/media/partners/*.{svg,png,jpg,jpeg,webp,avif}",
+  "../assets/media/partners/*.png",
   {
     eager: true,
     query: "?url",
