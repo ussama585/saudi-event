@@ -6,7 +6,7 @@ const imageFiles = import.meta.glob(
   "../assets/media/portfolio/*.{webp,jpg,jpeg,png,avif}",
   { eager: true, query: "?url", import: "default" },
 );
-const featuredFiles = ["s-13.webp", "t-3.webp", "s-2.jpg"];
+const featuredFiles = ["s-13.webp", "t-3.webp"];
 const images = Object.entries(imageFiles)
   .sort(([a], [b]) => {
     const featuredA = featuredFiles.indexOf(a.split("/").pop());

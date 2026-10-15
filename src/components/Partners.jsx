@@ -55,9 +55,10 @@ export default function Partners() {
             Partner with the summit <Handshake size={20} />
           </p>
         </div>
+      </div>
         <div className="partner-slider" data-reveal>
-          <div className="slider-controls partner-controls">
-            {!reduced && (
+          <div className="container slider-controls partner-controls">
+            {/* {!reduced && (
               <button
                 type="button"
                 aria-label={
@@ -68,7 +69,7 @@ export default function Partners() {
               >
                 {paused ? <Play size={20} /> : <Pause size={20} />}
               </button>
-            )}
+            )} */}
             <button
               type="button"
               aria-label="Previous partners"
@@ -84,6 +85,7 @@ export default function Partners() {
               <ArrowRight />
             </button>
           </div>
+
           <Swiper
             modules={[A11y, Autoplay, Keyboard]}
             onSwiper={(swiper) => {
@@ -92,9 +94,9 @@ export default function Partners() {
             slidesPerView={1.5}
             spaceBetween={16}
             speed={700}
-            rewind
+            loop={partners.length >= 10}
             autoplay={{
-              enabled: !reduced && !paused,
+              enabled: !reduced && !paused && partners.length >= 10,
               delay: 2500,
               pauseOnMouseEnter: true,
               disableOnInteraction: false,
@@ -122,7 +124,6 @@ export default function Partners() {
             ))}
           </Swiper>
         </div>
-      </div>
     </section>
   );
 }

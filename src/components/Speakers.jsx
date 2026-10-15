@@ -109,7 +109,7 @@ export default function Speakers() {
             </h2>
           </div>
           <div className="slider-controls">
-            {!reducedMotion && (
+            {/* {!reducedMotion && (
               <button
                 type="button"
                 aria-label={
@@ -120,7 +120,7 @@ export default function Speakers() {
               >
                 {paused ? <Play size={20} /> : <Pause size={20} />}
               </button>
-            )}
+            )} */}
             <button
               type="button"
               aria-label="Previous speaker track"
@@ -142,15 +142,16 @@ export default function Speakers() {
           companies are fictional; the confirmed line-up will be announced soon.
         </p>
         <div data-reveal>
+
           <Swiper
             modules={[A11y, Pagination, Keyboard, Autoplay]}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            slidesPerView={1.15}
+            slidesPerView={1}
             spaceBetween={24}
             speed={700}
-            rewind
+            loop={true}
             autoplay={{
               enabled: !reducedMotion && !paused,
               delay: 3500,
@@ -160,10 +161,11 @@ export default function Speakers() {
             pagination={{ clickable: true }}
             keyboard={{ enabled: true, onlyInViewport: true }}
             breakpoints={{
-              576: { slidesPerView: 2 },
+              768: { slidesPerView: 2 },
               992: { slidesPerView: 3 },
             }}
           >
+
             {speakers.map(
               ({ track, name, designation, company, icon: Icon, image }) => (
                 <SwiperSlide key={track}>

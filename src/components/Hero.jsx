@@ -99,9 +99,9 @@ export default function Hero() {
       />
       <div className="hero-overlay" aria-hidden="true" />
       <div className="container hero-body">
-        <p className="eyebrow" data-hero>
+        {/* <p className="eyebrow" data-hero>
           <span className="live-dot" /> RIYADH BUSINESS SUMMIT · 2026 EDITION
-        </p>
+        </p> */}
         <h1 id="hero-title" data-hero>
           Ambition.
           <br />
@@ -151,7 +151,7 @@ export default function Hero() {
       <div className="container hero-foot">
         <span>IDEAS THAT MOVE BUSINESS FORWARD</span>
         <div className="hero-foot-actions">
-          {!reducedMotion && (
+          {/* {!reducedMotion && (
             <button
               className="hero-video-toggle"
               type="button"
@@ -163,7 +163,7 @@ export default function Hero() {
               {paused ? <Play size={14} /> : <Pause size={14} />}
               {paused ? "Play video" : "Pause video"}
             </button>
-          )}
+          )} */}
           <a href="#countdown">
             Discover the summit <ArrowDown size={16} />
           </a>

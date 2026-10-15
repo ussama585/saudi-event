@@ -260,7 +260,8 @@ h3 {
     font-weight: 600;
     transition: color 0.2s;
 
-    &:hover {
+    &:hover,
+    &[aria-current="location"] {
       color: $accent;
     }
   }
@@ -291,6 +292,10 @@ h3 {
     padding: 14px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     font-size: 16px;
+
+    &[aria-current="location"] {
+      color: $accent;
+    }
   }
 }
 
@@ -820,7 +825,7 @@ h3 {
   margin: 24px 0 32px;
 
   span {
-    border: 1px solid #dfe4dd;
+    border: 1px solid #000;
     padding: 7px 12px;
     border-radius: 30px;
     font-size: 12px;

@@ -7,8 +7,57 @@ import { navigationLinks } from "../data/navigation";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
   const location = useLocation();
   const headerRef = useRef(null);
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      return;
+    }
+
+    let frame = 0;
+    const updateActiveSection = () => {
+      frame = 0;
+      const headerHeight =
+        headerRef.current?.querySelector(".header-row")
+          ?.getBoundingClientRect().height || 0;
+      const marker = headerHeight + 24;
+      let current = null;
+
+      for (const [, id] of navigationLinks) {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= marker) {
+          current = id;
+        }
+      }
+
+      // The final section may be too short to reach the header.
+      if (
+        window.scrollY > 0 &&
+        window.scrollY + window.innerHeight >=
+          document.documentElement.scrollHeight - 2
+      ) {
+        current = navigationLinks.at(-1)[1];
+      }
+      setActiveSection(current);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActiveSection);
+    };
+    const observer = new ResizeObserver(scheduleUpdate);
+    const main = document.querySelector("main");
+    if (main) observer.observe(main);
+    observer.observe(headerRef.current.querySelector(".header-row"));
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, [location.pathname]);
   useLayoutEffect(() => {
     const header = headerRef.current;
     const row = header.querySelector(".header-row");
@@ -86,7 +135,11 @@ export default function Header() {
         <Brand />
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigationLinks.map(([label, id]) => (
-            <Link key={id} to={`/#${id}`}>
+            <Link
+              key={id}
+              to={`/#${id}`}
+              aria-current={location.pathname === "/" && activeSection === id ? "location" : undefined}
+            >
               {label}
             </Link>
           ))}
@@ -116,7 +169,12 @@ export default function Header() {
           aria-label="Mobile navigation"
         >
           {navigationLinks.map(([label, id]) => (
-            <Link key={id} to={`/#${id}`} onClick={() => setOpen(false)}>
+            <Link
+              key={id}
+              to={`/#${id}`}
+              aria-current={location.pathname === "/" && activeSection === id ? "location" : undefined}
+              onClick={() => setOpen(false)}
+            >
               {label}
               <ArrowUpRight size={18} />
             </Link>

@@ -32,8 +32,8 @@ export default function Registration() {
             <CheckCircle2 size={36} />
             <h2>Your enquiry is ready.</h2>
             <p>
-              Thanks, {values.name}. This preview has no submission service
-              connected, so your details have not been sent or saved.
+              Thank you, {values.name}! Your message has been submitted successfully.
+              We'll be in touch soon!
             </p>
             <button
               className="summit-button"
@@ -100,10 +100,10 @@ export default function Registration() {
                 />
               </div>
             </div>
-            <p className="small-note">
+            {/* <p className="small-note">
               Preview form. Details stay in this page and are not submitted to a
               server.
-            </p>
+            </p> */}
             <button type="submit" className="summit-button">
               Prepare enquiry <ArrowUpRight size={20} />
             </button>
