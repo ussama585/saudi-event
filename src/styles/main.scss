@@ -302,6 +302,7 @@ h3 {
 @media (max-width: 1199.98px) {
   .summit-header.is-menu-open {
     height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     background: $dark;
@@ -314,7 +315,8 @@ h3 {
       max-height: none;
       width: 100%;
       padding: 24px clamp(20px, 6vw, 80px)
-        max(24px, env(safe-area-inset-bottom));
+        calc(40px + env(safe-area-inset-bottom, 0px));
+      scroll-padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
       overscroll-behavior: contain;
       a {
         padding-block: 18px;
