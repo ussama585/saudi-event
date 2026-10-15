@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { navigationLinks } from "../data/navigation";
 
-const currentYear = new Date().getFullYear();
+const currentYear = 2027;
 
 export default function Footer() {
   return (
@@ -31,7 +31,7 @@ export default function Footer() {
             <strong>
               15—17 OCT
               <br />
-              2026
+              2027
             </strong>
           </div>
         </div>

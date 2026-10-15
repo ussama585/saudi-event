@@ -14,7 +14,7 @@ export default function Brand() {
       <span>
         RIYADH BUSINESS
         <span>
-          SUMMIT <b>2026</b>
+          SUMMIT <b>2027</b>
         </span>
       </span>
     </Link>

@@ -4,7 +4,7 @@ import { Plus, Minus } from "lucide-react";
 const questions = [
   [
     "When and where is the summit?",
-    "The summit is planned for 15–17 October 2026 in Riyadh, Saudi Arabia. The confirmed venue will be announced here.",
+    "The summit is planned for 15–17 October 2027 in Riyadh, Saudi Arabia. The confirmed venue will be announced here.",
   ],
   [
     "Who is the summit for?",

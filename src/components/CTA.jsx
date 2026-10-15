@@ -12,7 +12,7 @@ export default function CTA() {
           <br />
           <span>Be part of what's next.</span>
         </h2>
-        <p>15—17 October 2026 · Riyadh, Saudi Arabia</p>
+        <p>15—17 October 2027 · Riyadh, Saudi Arabia</p>
         <Link to="/#registration" className="summit-button">
           Express your interest <ArrowUpRight size={22} />
         </Link>

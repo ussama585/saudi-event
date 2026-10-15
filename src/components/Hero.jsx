@@ -100,7 +100,7 @@ export default function Hero() {
       <div className="hero-overlay" aria-hidden="true" />
       <div className="container hero-body">
         {/* <p className="eyebrow" data-hero>
-          <span className="live-dot" /> RIYADH BUSINESS SUMMIT · 2026 EDITION
+          <span className="live-dot" /> RIYADH BUSINESS SUMMIT · 2027 EDITION
         </p> */}
         <h1 id="hero-title" data-hero>
           Ambition.
@@ -118,7 +118,7 @@ export default function Hero() {
             <div className="hero-meta" data-hero>
               <span>
                 <CalendarDays size={18} />
-                15—17 October 2026
+                15—17 October 2027
               </span>
               <span>
                 <MapPin size={18} />

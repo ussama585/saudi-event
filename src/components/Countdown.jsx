@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
-const opening = new Date("2026-10-15T09:00:00+03:00").getTime();
+const opening = new Date("2027-10-15T09:00:00+03:00").getTime();
 function remaining() {
   const seconds = Math.max(0, Math.floor((opening - Date.now()) / 1000));
   return [

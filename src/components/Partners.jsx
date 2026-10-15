@@ -91,7 +91,7 @@ export default function Partners() {
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            slidesPerView={1.5}
+            slidesPerView={1}
             spaceBetween={16}
             speed={700}
             loop={partners.length >= 10}
@@ -103,7 +103,7 @@ export default function Partners() {
             }}
             keyboard={{ enabled: true, onlyInViewport: true }}
             breakpoints={{
-              576: { slidesPerView: 3 },
+              768: { slidesPerView: 3 },
               992: { slidesPerView: 4 },
               1200: { slidesPerView: 5 },
             }}
